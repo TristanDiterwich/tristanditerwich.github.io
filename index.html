@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <title>test</title>
+    <link href="Styles.css" rel="stylesheet">
+</head>
+
+<body>
+<div id="everything">
+    <h1>Welcome car buyer</h1>
+    <div class="container">
+        <div class="row"> 
+            <div class="col">
+                <h8>ICE car</h8>
+                <div id="carBrandDropdown" class="dropdown">
+                    <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButtonBrand"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Pick your ICE car's brand
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    </div>
+                </div>
+                <h2></h2>
+                <div id="modelDropdown" class="dropdown">
+                    <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButtonModel"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        your ICE car's model
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    </div>
+                </div>
+                <h2></h2>
+                <div id="buildYearDropdown" class="dropdown">
+                    <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButtonYear"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        and your ICE car's build year
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <h8>Electric car</h8>
+                <div id="carBrandEVDropdown" class="dropdown">
+                    <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButtonBrandEV"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Now your electric car's brand
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    </div>
+                </div>
+                <h2></h2>
+                <div id="modelEVDropdown" class="dropdown">
+                    <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButtonModelEV"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        your electric car's model
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    </div>
+                </div>
+                <h2></h2>
+                <div id="buildYearEVDropdown" class="dropdown">
+                    <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButtonYearEV"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        and your electric car's build year
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    </div>
+                </div>
+            </div>
+        <div class="container">    
+            <div class="row"> 
+                <div class="col">
+                    <h3>Yearly kilometers</h3>
+                    <div class="dropdown">
+                        <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButtonKM"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Pick how many kilometers you drive per year
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#" onclick="selectedKM(2000)">2.000 km</a>
+                            <a class="dropdown-item" href="#" onclick="selectedKM(5000)">5.0000 km</a>
+                            <a class="dropdown-item" href="#" onclick="selectedKM(10000)">10.0000 km</a>
+                            <a class="dropdown-item" href="#" onclick="selectedKM(15000)">15.0000 km</a>
+                            <a class="dropdown-item" href="#" onclick="selectedKM(20000)">20.0000 km</a>
+                            <a class="dropdown-item" href="#" onclick="selectedKM(25000)">25.0000 km</a>
+                            <a class="dropdown-item" href="#" onclick="selectedKM(30000)">30.0000 km</a>
+                            <a class="dropdown-item" href="#" onclick="selectedKM(50000)">50.0000 km</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <h3>Years owned</h3>
+                    <div class="dropdown">
+                        <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButtonYears"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            and how long you plan to keep your new car
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#" onclick="selectedYears(2)">2 years</a>
+                            <a class="dropdown-item" href="#" onclick="selectedYears(3)">3 years</a>
+                            <a class="dropdown-item" href="#" onclick="selectedYears(4)">4 years</a>
+                            <a class="dropdown-item" href="#" onclick="selectedYears(5)">5 years</a>
+                            <a class="dropdown-item" href="#" onclick="selectedYears(10)">10 years</a>
+                            <a class="dropdown-item" href="#" onclick="selectedYears(15)">15 years</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<h3></h3>
+    <div class="container" id="resultContainer">   
+        <div class="row">
+            <div class="col">
+                <h3>If you keep your current car you will use</h3>
+                <div id="result"></div>
+                <h3>kg of CO2.</h3>
+            </div>
+            <div class="col">
+                <h3>You new electric car will use</h3>
+                <h3></h3>
+                <div id="resultDifference"></div>
+                <h3>% of the CO2 of your current car.</h3>
+            </div>
+            <div class="col">
+                <h3>If you buy a new electric car you will use</h3> 
+                <div id="resultEV"></div>
+                <h3>kg of CO2.</h3>
+            </div>
+        </div>
+    </div>
+</div>
+<h3></h3>
+    <div class="container" id="recyclingContainer">   
+        <div class="row">
+            <div class="col">
+                <h8>Note about recycling</h8>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h3>Recycling ICE vehicles</h3>
+                <h2>Recycling ICE vehicles is common practise. Companies like ARN state that they can recycle up to 98% of a car. Valuables like batteries, fluids, tyres, plastics and more are taken from the car and sent to partners for specialised recycling. After all valuables are removed, the car moves through the shredder. The different pieces of material are separated by their raw material. Then the Post-Shredder-Technology melts the scraps together to form usable raw materials.</h2>
+            </div>
+            <div class="col">
+                <h3>Recyclling Electric vehicles</h3>
+                <h2>Electric cars are recycled in the same way, expect for the hard-to-recycle battery. However, recycling electric car batteries is rapidly developing. Start-ups like EcarAccu promise to recycle up to 98% of electric car batteries. They check every cell for damage, leakage and capacity. The cells that pass the test are sold to sellers who need a lot of cheap batteries. This can for example be the owner of a solar power plant who wants to store electricity for the night. The rest of the battery is disassembled into raw materials.</h2>
+            </div>
+        </div>
+    </div>
+    <h3></h3>
+    <div class="container">   
+        <div class="row">
+            <h6>.............</h6><h7>Additional notes:</h7>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h2>ICE car = Internal Combustion Engine car</h2>
+            </div>
+            <div class="col">
+                <h2>All results take car production, fuel production and tailpipe emmisions into consideration.</h2>
+            </div>
+            <div class="col">
+                <h2>Recycling is not taken into consideration. However, there is a note on the recyclability of both types of cars after the data has been filled in.</h2>
+            </div>
+        </div>
+    </div>
+    <h3></h3>
+    <div class="container">   
+        <div class="row">
+        <h7>Bibliography:</h7>
+        </div>
+        <div class="row">
+        <h4>“Car Recycling.” ARN, 14 May 2020, arn.nl/en/car-recycling/.</h4>
+        </div>
+        <div class="row">
+        <h4>“CO2 Emissions from Cars: Facts and Figures (Infographics): News: European Parliament.” CO2 Emissions from Cars: Facts and Figures (Infographics) | News | European Parliament, 18 Apr. 2019, www.europarl.europa.eu/news/en/headlines/society/20190313STO31218/co2-emissions-from-cars-facts-and-figures-infographics.</h4>
+        </div>
+        <div class="row">
+        <h4>“Greenhouse Gas Emissions from a Typical Passenger Vehicle.” EPA, Environmental Protection Agency, 10 May 2018, www.epa.gov/greenvehicles/greenhouse-gas-emissions-typical-passenger-vehicle.</h4>
+        </div>
+        <div class="row">
+        <h4>Hage, Jonne. “Wat Kost Een Kilowattuur (KWh) Elektriciteit?” Menu, Consumentenbond, 14 Aug. 2019, www.consumentenbond.nl/energie-vergelijken/kwh-prijs.</h4>
+        </div>
+        <div class="row">
+        <h4>Hall, Dale, and Nic Lutsey. The ICCT, 2018, pp. 1–12, Effects of Battery Manufacturing on Electric Vehicle Life-Cycle Greenhouse Gas Emissions. https://theicct.org/sites/default/files/publications/EV-life-cycle-GHG_ICCT-Briefing_09022018_vF.pdf</h4>
+        </div>
+        <div class="row">
+        <h4>Harmelink, Mirjam.  “Berekening van de CO2-emissies, het primair fossiel energiegebruik en het rendement van elektriciteit in Nederland.” September 2012. https://www.rvo.nl/sites/default/files/Notitie%20EnergICEO2%20effecten%20elektriciteit%20Sept%202012.pdf</h4>
+        </div>
+        <div class="row">
+        <h4>“Life Cycle Emissions from Cars.” Low Carbon Vehicle Partnership. 2015 file:///Users/524708/Downloads/MC-P-11-15a+Lifecycle+emissions+report.pdf</h4>
+        </div>
+        <div class="row">
+        <h4>Ursem, Pieter. “About Us: How It Started.” EcarACCU, 2020, ecaraccu.nl/about-us/.</h4>
+        </div>   
+    </div>
+
+    
+
+    <script src="vehicles.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+     <script src="Index.js"></script>
+</body>
+
+</html>
