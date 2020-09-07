@@ -63,6 +63,11 @@ h6 {
     color: #cfffe5;
 }
 
+h10 {
+    font-size: 50%;
+    color: #ffffff;
+}
+
 body {
     padding: 0%;
     margin: 5%;
